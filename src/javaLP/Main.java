@@ -1,16 +1,26 @@
 package javaLP;
-import static javax.swing.JOptionPane.*;
+import static javax.swing.JOptionPane.*;	
+import java.util.Scanner;
 
 public class Main 
 {
-
+	//so, enums are not int valued, but as members of enum type. we can specifie there value like this MyEnum_One(value), like MyEnum_One(5) has value 5
+	enum MyEnum
+	{
+		MyEnum_One,
+		MyEnum_Two,
+		MyEnum_Three,
+	}
+	
+	
 	public static void main(String[] args) 
 	{
-		/*
+		System.out.print(MyEnum.MyEnum_One);
 		//testing inclusion of other classes in different files
-		Calculator calc = new Calculator();
-		System.out.print(calc.sum(9, 43) + "\n");
+		//Calculator calc = new Calculator();
+		//System.out.print(calc.sum(9, 43) + "\n");
 		
+		/*
 		//test code
 		System.out.print("Hello World!\n");
 		String name = "Gennadiy Belz";
@@ -35,7 +45,7 @@ public class Main
 		String newName = showInputDialog("Name eingeben");
 		String newHobby = showInputDialog("Was machst du?");
 		showMessageDialog(null, newName + "\n" + newHobby, "Aufgabe 4", INFORMATION_MESSAGE);
-		*/
+		
 		
 		//Aufgabe 5
 		//Variante 1
@@ -70,7 +80,7 @@ public class Main
 		System.out.println(ergebnis + "Test");
 		System.out.println("Test" + ergebnis);
 		//bonus
-		float bonusAufgabe = 17 / 5;
+		float bonusAufgabe = 17 / 5.0f;
 		System.out.printf("%,.2f", bonusAufgabe);
 
 		//Variante 1: Operationenreihung
@@ -92,6 +102,44 @@ public class Main
 		//3 erwartet int/int = int => Genauigkeitsverlust
 		//10Test gleich wie oben
 		//Test10 gleich wie oben
+		
+		//BAufgabe 1
+		//need import java.util.Scanner;
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the first number:");
+		double numOne = scanner.nextDouble();
+		System.out.println("Enter the second number:");
+		double numTwo = scanner.nextDouble();
+		
+		double result = numOne * numTwo;
+		System.out.printf("Resultat von %.2f und %.2f ist %.2f%n", numOne, numTwo, result);
+		scanner.close();
+		
+		//BAufgabe 2
+		//Becoming input
+		String input = showInputDialog(null, "Geben Sie eine Dezimalzahl ein:");
+        double zahl = Double.parseDouble(input);
+		//Out normal
+		System.out.println(zahl);
+		//Out normal max 10 dez positions
+		System.out.printf("%.10f%n", zahl);
+		//Out right on position 10, 3 dez rounded, if negativ then in ()
+		if(zahl > 0)
+		{
+			System.out.printf("%10.3f%n", zahl);	
+		}
+		else
+		{
+			System.out.printf("%(10.3f%n", zahl);
+		}
+		//Out 3x after each other, rounded without dez, after that rounded 2 dez, after that as exponennt rounded dez 4. all on right position 11
+		System.out.printf("%11.0f%11.2f%11.4e%n", zahl, zahl, zahl);
+		//Out right on 20 postision, filled with 0, dez 6
+		System.out.printf("%020.6f%n", zahl);
+		*/
+		
+		
+		
 		
 	}
 

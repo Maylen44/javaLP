@@ -1,6 +1,6 @@
 package javaLP;
 
-public class Calculator 
+public class Calculator
 {
 	/*
 	No Distructor posible => Garbage Collector
@@ -21,6 +21,8 @@ public class Calculator
 		int result = lw + rw;
 		return result;
 	}
+	
+
 	
 	private int m_fieldValue;
 	private int m_fieldValue2;
