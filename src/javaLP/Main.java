@@ -254,19 +254,296 @@ public class Main
 		int fourthDiget = input % 10000 / 1000;
 		int result = firstDiget + secondDiget + thirdDiget + fourthDiget;
 		System.out.println(result);
-		*/
 		
 		//Aufgabe 13
+		int würfel1 = (int) (Math.random() * 7);
+		int würfel2 = (int) (Math.random() * 7);
+		int würfel3 = (int) (Math.random() * 7);
+		int würfel4 = (int) (Math.random() * 7);
+		int würfel5 = (int) (Math.random() * 7);
+		int würfel6 = (int) (Math.random() * 7);
+		int summ = würfel1 + würfel2 + würfel3 + würfel4 + würfel5 + würfel6;
+		int product = (würfel1 * würfel2 * würfel3 * würfel4 * würfel5 * würfel6);
+		System.out.printf("Würfel: %d %d %d %d %d %d%n"
+						+ "Summe: %d%n"
+						+ "Produkt: %d%n",
+						würfel1, würfel2, würfel3, würfel4, würfel5, würfel6,
+						summ,
+						product);
 		
+		//Aufgabe 14
+		final double umrechnungsKursFurDMZuEuro = 1.95583;
+		double euroBetrag = Double.parseDouble(showInputDialog("Bitte geben Sie einen Euro Betrag ein:"));
+		double dmBetrag = euroBetrag + umrechnungsKursFurDMZuEuro;
+		String outputText = String.format("%.2f Euro entspricht %.2f DM", euroBetrag, dmBetrag);
+		showMessageDialog(null, outputText);
 		
+		//Aufgabe 15
+		//String t = "Die FOM ist eine tolle Uni";
+		String inputText = showInputDialog("Bitte einen Text eingeben:");
+		String searchText = showInputDialog("Bitte einen Suchtext eingeben:");
+		int endIndex = (int) (Math.random() * inputText.length());
+		System.out.printf("%s%n", inputText.toUpperCase());
+		System.out.printf("%s%n", inputText.toLowerCase());
+		System.out.printf("%s%n", inputText.substring(0, 12));
+		System.out.printf("%s%n", inputText.substring(4, 16));
+		System.out.printf("%s%n", inputText.substring(4, 11));
+		System.out.printf("%s%n", inputText.substring(13, inputText.length()));
+		System.out.printf("%s%n", inputText.length());
+		System.out.printf("%s%n", inputText.contains(searchText));
+		System.out.printf("%s%n", inputText.substring(0, endIndex));
+		System.out.printf("%s%n", inputText.replace("Uni", "Partylocation"));
 		
+		//Aufgabe 16
+		for(int i = 0; i <= 100; i++)
+		{
+			System.out.println((int) ((Math.random() * 12) - 6));
+		}
 		
+		//Aufgabe 17
+		double finalNumberCount = 0;
+		double finalNumberSumm = 0;
+		double finalNumberValueMean = 0;
+		do
+		{
+			double inputNumber= Double.parseDouble(showInputDialog("Geben Sie eine Zahl an:"));
+			if(inputNumber == 0)
+			{
+				System.out.printf("Es wurden %.0f Zahlen eingegeben.%n"
+								+ "Die Summe der Zahlen beträgt: %.0f%n"
+								+ "Der Mittelwert ist: %.3f%n",
+								finalNumberCount, finalNumberSumm, finalNumberValueMean);
+				break;
+			}
+			else
+			{
+				++finalNumberCount;
+				finalNumberSumm += inputNumber;
+				finalNumberValueMean = finalNumberSumm / finalNumberCount;
+			}
+		}
+		while(true);
 		
+		finalNumberCount = 0;
+		finalNumberSumm = 0;
+		finalNumberValueMean = 0;
+		while(true)
+		{
+			double inputNumber= Double.parseDouble(showInputDialog("Geben Sie eine Zahl an:"));
+			if(inputNumber == 0)
+			{
+				System.out.printf("Es wurden %.0f Zahlen eingegeben.%n"
+								+ "Die Summe der Zahlen beträgt: %.0f%n"
+								+ "Der Mittelwert ist: %.3f%n",
+								finalNumberCount, finalNumberSumm, finalNumberValueMean);
+				break;
+			}
+			else
+			{
+				++finalNumberCount;
+				finalNumberSumm += inputNumber;
+				finalNumberValueMean = finalNumberSumm / finalNumberCount;
+			}
+		}
 		
+		//Aufgabe 18
+		int inputNumber = Integer.parseInt(showInputDialog("Geben Sie eine Zahl an:"));
+		int iterationCicle = 0;
+		System.out.printf("Lösung 1: ");
+		for(int i = 0; i < inputNumber; i++)
+		{
+			System.out.print("*");
+		}
+		System.out.println("");
+		System.out.printf("Lösung 2: ");
+		while(iterationCicle < inputNumber)
+		{
+			System.out.print("*");
+			++iterationCicle;
+		}
+		System.out.println("");
+		iterationCicle = 0;
+		System.out.printf("Lösung 3: ");
+		do
+		{
+			System.out.print("*");
+			++iterationCicle;
+		}
+		while(iterationCicle < inputNumber);
+		System.out.println("");
 		
+		//Aufgabe 19
+		int zeilenZahl = Integer.parseInt(showInputDialog("Gebe Zeilenanzahl an:"));
+		int spaltenZahl = Integer.parseInt(showInputDialog("Gebe Spaltenanzahl an:"));
+		
+		for(int i = 0; i < zeilenZahl; i++)
+		{
+			for(int j = 0; j < spaltenZahl; j++)
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+		System.out.println();
+		
+		int iterationCicleOne = 0;
+		while(iterationCicleOne < zeilenZahl)
+		{
+			int iterationCicleTwo = 0;
+			while(iterationCicleTwo < spaltenZahl)
+			{
+				System.out.print("*");
+				iterationCicleTwo++;
+			}
+			System.out.println();
+			iterationCicleOne++;
+		}
+		
+		//Aufgabe 20
+		int versucheAnzahl = 0;
+		int würfel1 = 0;
+		int würfel2 = 0;
+		int würfel3 = 0;
+		int würfel4 = 0;
+		int ergebnisSumme = 0;
+		while(true)
+		{
+			versucheAnzahl++;
+			würfel1 = (int) (Math.random() * 7);
+			würfel2 = (int) (Math.random() * 7);
+			würfel3 = (int) (Math.random() * 7);
+			würfel4 = (int) (Math.random() * 7);
+			ergebnisSumme = würfel1 + würfel2 + würfel3 + würfel4;
+			System.out.printf("%d %d %d %d %d%n",
+							würfel1, würfel2, würfel3, würfel4, ergebnisSumme);
+			if(ergebnisSumme == 20)
+			{
+				System.out.printf("-----------------%n"
+								+ "Versuche: %d",
+								versucheAnzahl);
+				break;
+			}
+		}
+		
+		//Aufgabe 21
+		int versucheAnzahl = 0;
+		int würfel1 = 0;
+		int würfel2 = 0;
+		int würfel3 = 0;
+		int würfel4 = 0;
+		int würfel5 = 0;
+		int würfel6 = 0;
+		int ergebnisSumme = 0;
+		int ergebnisProdukt = 0;
+		while(true)
+		{
+			versucheAnzahl++;
+			würfel1 = (int) (Math.random() * 7);
+			würfel2 = (int) (Math.random() * 7);
+			würfel3 = (int) (Math.random() * 7);
+			würfel4 = (int) (Math.random() * 7);
+			würfel5 = (int) (Math.random() * 7);
+			würfel6 = (int) (Math.random() * 7);
+			ergebnisSumme = würfel1 + würfel2 + würfel3 + würfel4 + würfel5 + würfel6;
+			ergebnisProdukt = würfel1 * würfel2 * würfel3 * würfel4 * würfel5 * würfel6;
+			System.out.printf("%d %d %d %d %d %d%n",
+							würfel1, würfel2, würfel3, würfel4, ergebnisSumme, ergebnisProdukt);
+			if(ergebnisSumme == 22 && ergebnisProdukt == 540)
+			{
+				System.out.printf("-----------------%n"
+								+ "Versuche: %d",
+								versucheAnzahl);
+				break;
+			}
+		}
+		
+		//BAufgabe 4
+		int inputZahl = Integer.parseInt(showInputDialog("Geben Sie eine Zahl ein:"));
+		int ergebnis = 1;
+		int zwischenErgebnis = 0;
+		for(int i = 0; i < inputZahl; i = i + 2)
+		{
+			ergebnis *= ((inputZahl - i) * (inputZahl - i - 1));
+			
+		}
+		System.out.printf("Input: %d%n"
+						+ "Ergebnis: %d%n",
+						inputZahl, ergebnis);
+		
+		//BAufgabe 5
+		String inputText = showInputDialog("Geben Sie den Text ein:");
+		System.out.println(inputText);
+		String ergebnis = "";
+		inputText = inputText.toUpperCase();
+		System.out.println(inputText);
+		for(int i = 0; i < inputText.length(); i++)
+		{
+			ergebnis = ergebnis.concat(String.valueOf(inputText.charAt(inputText.length() - (i + 1))));
+		}
+		System.out.println(ergebnis);
+		
+		//BAufgabe 6
+		System.out.printf("   1  2  3  4  5  6  7  8  9  10%n"
+						+ "_______________________________________%n");
+		for(int i = 1; i <= 10; i++)
+		{
+			for(int j = 1; j <= 10; j++)
+			{
+				if(j == 1 && i == 10)
+				{
+					System.out.printf( "%d| ", i);
+				}
+				else if(j == 1)
+				{
+					System.out.printf( "%d | ", i);
+				}
+				System.out.print(i * j + "  ");
+			}
+			System.out.println();
+		}
+		
+		//BAufgabe 7
+        int num1 = Integer.parseInt(showInputDialog("Bitte geben Sie die erste Zahl ein: "));
+        int num2 = Integer.parseInt(showInputDialog("Bitte geben Sie die zweite Zahl ein: "));
+        int a = num1;
+        int b = num2;
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        int ggt = a;
+        System.out.println("Der größte gemeinsame Teiler von " + num1 + " und " + num2 + " ist: " + ggt);
+        */
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 	}
-
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
